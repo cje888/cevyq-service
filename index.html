@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Kitty | Home and Personal Care, Bangkok</title>
+<title>Malee | Home and Personal Care, Bangkok</title>
 <meta name="description" content="House cleaning, house sitting, dog walking and hostess services in Bangkok. Book on WhatsApp or LINE.">
-<meta property="og:title" content="Kitty | Home and Personal Care">
+<meta property="og:title" content="Malee | Home and Personal Care">
 <meta property="og:description" content="House cleaning, house sitting, dog walking and hostess services in Bangkok.">
-<meta property="og:image" content="https://service.cevyq.com/kitty.jpg">
+<meta property="og:image" content="https://service.cevyq.com/malee.jpg">
 <meta name="theme-color" content="#faf7f1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,6 @@
   .portrait .in{width:100%;height:100%;border-radius:50%;border:4px solid #fff;overflow:hidden;background:linear-gradient(160deg,var(--mist),#cfdfd6);display:flex;align-items:center;justify-content:center}
   .portrait img{width:100%;height:100%;object-fit:cover;display:block}
   .mono{font-family:"Cormorant Garamond",serif;font-size:3.6rem;font-weight:500;color:var(--jade);line-height:1}
-  .aka{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.35rem;color:var(--gold);line-height:1.2;margin-top:2px}
   h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:2.35rem;line-height:1.05;color:var(--jade);letter-spacing:.01em}
   .role{margin-top:6px;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
   .role-th{font-family:var(--thai);font-size:.85rem;color:var(--soft);margin-top:2px}
@@ -160,9 +159,8 @@
 
 <div class="card">
   <div class="profile">
-    <div class="portrait"><div class="in" id="photo"><img src="kitty.jpg" alt="Doungdao Thayanram (Kitty)" width="480" height="480"></div></div>
-    <h1>Doungdao Thayanram</h1>
-    <div class="aka">Kitty</div>
+    <div class="portrait"><div class="in" id="photo"><img src="malee.jpg" alt="Malee Srisuk" width="480" height="480"></div></div>
+    <h1>Malee Srisuk</h1>
     <div class="role">Home and Personal Care</div>
     <div class="role-th">บริการดูแลบ้านและงานส่วนตัว · Bangkok</div>
     <div class="rule"></div>
@@ -253,7 +251,7 @@
     <div class="eyebrow">Kind words</div>
     <h2>From my clients</h2>
     <div class="reviews">
-      <div class="rev"><q>Kitty looked after our condo and our two dogs for three weeks. We came home to a spotless home and very spoiled dogs.</q><small><b>★★★★★</b>Sarah, Sukhumvit</small></div>
+      <div class="rev"><q>Malee looked after our condo and our two dogs for three weeks. We came home to a spotless home and very spoiled dogs.</q><small><b>★★★★★</b>Sarah, Sukhumvit</small></div>
       <div class="rev"><q>She hosted our villa dinner for twelve guests. Elegant, warm and nothing was ever too much trouble.</q><small><b>★★★★★</b>James, Hua Hin</small></div>
       <div class="rev"><q>ทำความสะอาดละเอียดมาก ตรงเวลา และสุภาพมากค่ะ แนะนำเลย</q><small><b>★★★★★</b>คุณนิด, สาทร</small></div>
     </div>
@@ -317,11 +315,11 @@
 <div class="toast" id="toast"></div>
 
 <script>
-  // Kitty's contact details.
-  var WA = "66840307299";
-  var TEL = "+66840307299";
-  var LINE_ID = "";              // her LINE ID, e.g. "kitty.care"
-  var NAME = "Doungdao Thayanram", FIRST = "Kitty";
+  // Demo contact details. On a real card these become her own numbers.
+  var WA = "66631101888";
+  var TEL = "+66631101888";
+  var LINE_ID = "";              // her LINE ID, e.g. "malee.care"
+  var NAME = "Malee Srisuk";
 
   var toast = document.getElementById("toast"), tt;
   function say(t){ toast.textContent = t; toast.classList.add("on"); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove("on"); }, 2600); }
@@ -334,7 +332,7 @@
   document.querySelectorAll("[data-go]").forEach(function(a){
     a.addEventListener("click", function(e){
       e.preventDefault();
-      var g = a.getAttribute("data-go"), hi = "Hi " + FIRST + ", I found your card and would like to ask about your services.";
+      var g = a.getAttribute("data-go"), hi = "Hi " + NAME.split(" ")[0] + ", I found your card and would like to ask about your services.";
       if (g === "wa") wa(hi);
       else if (g === "line") line(hi);
       else location.href = "tel:" + TEL;
@@ -355,7 +353,7 @@
   function bookingText(){
     var svc = document.querySelector('#opts .opt[aria-pressed="true"]').textContent;
     var d = document.getElementById("when").value, area = document.getElementById("area").value.trim();
-    var t = "Hi " + FIRST + ", I would like to book " + svc.toLowerCase();
+    var t = "Hi " + NAME.split(" ")[0] + ", I would like to book " + svc.toLowerCase();
     if (d) t += " on " + new Date(d + "T12:00").toLocaleDateString("en-GB", {weekday:"long", day:"numeric", month:"long"});
     if (area) t += " in " + area;
     return t + ". Are you available?";
@@ -374,10 +372,10 @@
   // save contact
   document.getElementById("save").addEventListener("click", function(e){
     e.preventDefault();
-    var v = ["BEGIN:VCARD","VERSION:3.0","FN:" + NAME + " (Kitty)","N:Thayanram;Doungdao;;;","NICKNAME:Kitty","TITLE:Home and Personal Care","TEL;TYPE=CELL:" + TEL,"URL:" + location.href.split("#")[0],"NOTE:House cleaning, house sitting, dog walking, hostess and events. Bangkok.","END:VCARD"].join("\r\n");
+    var v = ["BEGIN:VCARD","VERSION:3.0","FN:" + NAME,"N:Srisuk;Malee;;;","TITLE:Home and Personal Care","TEL;TYPE=CELL:" + TEL,"URL:" + location.href.split("#")[0],"NOTE:House cleaning, house sitting, dog walking, hostess and events. Bangkok.","END:VCARD"].join("\r\n");
     var a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([v], {type:"text/vcard"}));
-    a.download = "Kitty Thayanram.vcf"; document.body.appendChild(a); a.click(); a.remove();
+    a.download = "Malee Srisuk.vcf"; document.body.appendChild(a); a.click(); a.remove();
     say("Contact saved");
   });
 
