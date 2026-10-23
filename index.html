@@ -8,7 +8,7 @@
 <meta property="og:title" content="Malee | Home and Personal Care">
 <meta property="og:description" content="House cleaning, house sitting, dog walking and hostess services in Bangkok.">
 <meta property="og:image" content="https://service.cevyq.com/malee.jpg">
-<meta name="theme-color" content="#1f3d36">
+<meta name="theme-color" content="#faf7f1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500&display=swap" rel="stylesheet">
@@ -28,13 +28,12 @@
   .th{font-family:var(--thai);font-weight:400}
 
   /* header */
-  .top{position:relative;background:var(--jade);color:#fff;padding:max(26px,env(safe-area-inset-top)) 16px 150px;text-align:center;overflow:hidden}
-  .top::before{content:"";position:absolute;inset:0;background:
-      radial-gradient(120% 80% at 50% -10%,rgba(216,189,138,.22),transparent 60%),
-      radial-gradient(80% 60% at 100% 100%,rgba(143,174,159,.18),transparent 70%)}
+  .top{position:relative;background:#e9e4da url(room.jpg) center 45%/cover no-repeat;color:var(--jade);padding:max(18px,env(safe-area-inset-top)) 16px 190px;text-align:center;overflow:hidden}
+  .top::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,247,241,0) 40%,rgba(250,247,241,.7) 80%,var(--ivory))}
   .top>*{position:relative}
-  .hello{font-family:var(--thai);font-size:.95rem;letter-spacing:.06em;color:var(--gold2)}
-  .hello span{font-family:Jost;color:rgba(255,255,255,.6);letter-spacing:.2em;text-transform:uppercase;font-size:.7rem;margin-left:8px}
+  .hello{display:inline-block;font-family:var(--thai);font-size:.9rem;color:var(--jade);background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:6px 16px;border-radius:99px;box-shadow:0 6px 18px -10px rgba(31,61,54,.5)}
+  .hello span{font-family:Jost;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-size:.68rem;margin-left:8px;font-weight:600}
+  @media(min-width:700px){.top{padding-bottom:240px}}
   .lotus{display:block;width:34px;height:20px;margin:10px auto 0;opacity:.85}
 
   .card{position:relative;max-width:460px;margin:-74px auto 0;padding:0 16px}
