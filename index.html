@@ -303,10 +303,11 @@
 var C = {WA:"66631101888", TEL:"+66631101888", MAIL:"hello@cevyq.com", NAME:"Kanya Boonmee", FIRST:"Kanya", ORG:"Kanya Home Care", TITLE:"Home and Personal Care", NOTE:"Cleaning, house sitting, pet care and hosting in Bangkok.", HI:"Hi Kanya, I found your card and would like to ask about your services.", TZ:"Asia/Bangkok", HOURS:[[1,7.5,19],[2,7.5,19],[3,7.5,19],[4,7.5,19],[5,7.5,19],[6,7.5,19]]};
 var toast = document.getElementById("toast"), tt;
 function say(x){ toast.textContent = x; toast.classList.add("on"); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove("on"); }, 2600); }
-function wa(x){ window.open("https://wa.me/" + C.WA + "?text=" + encodeURIComponent(x), "_blank", "noopener"); }
-function line(x){ window.open("https://line.me/R/msg/text/?" + encodeURIComponent(x), "_blank", "noopener"); }
-function mail(x){ location.href = "mailto:" + C.MAIL + "?subject=" + encodeURIComponent("Enquiry for " + C.NAME) + "&body=" + encodeURIComponent(x); }
-function sms(x){ location.href = "sms:" + C.TEL + "?&body=" + encodeURIComponent(x); }
+function msg(){ return "Hello CEVYQ sales team, I'm interested in the offer."; }
+function wa(x){ window.open("https://wa.me/" + C.WA + "?text=" + encodeURIComponent(msg()), "_blank", "noopener"); }
+function line(x){ window.open("https://line.me/R/msg/text/?" + encodeURIComponent(msg()), "_blank", "noopener"); }
+function mail(x){ location.href = "mailto:" + C.MAIL + "?subject=" + encodeURIComponent("Interested in the CEVYQ offer") + "&body=" + encodeURIComponent(msg()); }
+function sms(x){ location.href = "sms:" + C.TEL + "?&body=" + encodeURIComponent(msg()); }
 function send(ch, x){ if (ch === "line") line(x); else if (ch === "sms") sms(x); else if (ch === "mail") mail(x); else wa(x); }
 function hi(){ return typeof C.HI === "function" ? C.HI() : C.HI; }
 document.querySelectorAll("[data-go]").forEach(function(a){
